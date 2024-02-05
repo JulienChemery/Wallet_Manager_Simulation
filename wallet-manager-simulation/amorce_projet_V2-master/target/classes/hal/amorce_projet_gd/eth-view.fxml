@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.chart.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<VBox xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hal.amorce_projet_gd.PortefeuilleController">
+    <Label style="-fx-text-fill: #000000; -fx-font-size: 16px; -fx-font-weight: bold;" text="Ethereum">
+        <padding>
+            <Insets left="20.0" top="25.0" />
+        </padding>
+      <VBox.margin>
+         <Insets />
+      </VBox.margin></Label>
+
+    <LineChart fx:id="lineChart" stylesheets="@styles.css">
+        <xAxis>
+            <CategoryAxis label="Time" stylesheets="@styles.css" />
+        </xAxis>
+        <yAxis>
+            <NumberAxis label="Price" stylesheets="@styles.css" />
+        </yAxis>
+      <VBox.margin>
+         <Insets top="20.0" />
+      </VBox.margin>
+    </LineChart>
+    <ComboBox fx:id="yearSelector" styleClass="button-background" stylesheets="@styles.css">
+        <VBox.margin>
+            <Insets bottom="20.0" left="20.0" />
+        </VBox.margin></ComboBox>
+    <!-- Add any other UI elements here as needed -->
+</VBox>

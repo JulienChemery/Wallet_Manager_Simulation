@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<BorderPane fx:id="mainPane" style="-fx-background-color: #FFFFFF;" stylesheets="@styles.css" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="hal.amorce_projet_gd.DashboardController">
+    <top>
+        <!-- Le camembert est placé ici dans le top -->
+
+    </top>
+    <left>
+        <VBox prefHeight="650.0" prefWidth="325.0" spacing="20" style="-fx-background-color: #3d4a5d;">
+            <padding>
+                <Insets bottom="20" left="20" right="20" top="20" />
+            </padding>
+
+            <HBox spacing="10.0">
+                <Button fx:id="portefeuilleButton" onAction="#handlePortefeuille" styleClass="button" stylesheets="@styles.css" text="Mon Portefeuille">
+                    <font>
+                        <Font name="System Bold" size="12.0" />
+                    </font></Button>
+
+
+                <MenuButton stylesheets="@styles.css" text="Options">
+                    <items>
+                        <MenuItem fx:id="createPortfolioMenuItem" onAction="#handleCreateNewPortfolio" styleClass="menu-item" text="Créer un portefeuille" />
+                        <MenuItem fx:id="duplicatePortfolioMenuItem" onAction="#handleDuplicatePortfolio" styleClass="menu-item" text="Dupliquer un portefeuille" />
+                        <MenuItem fx:id="deletePortfolioMenuItem" onAction="#handleDeletePortfolio" styleClass="menu-item" text="Supprimer le portefeuille" />
+                        <MenuItem fx:id="selectPortfolioMenuItem" onAction="#handleSelectPortfolio" styleClass="menu-item" text="Sélectionner un portefeuille" />
+                    </items>
+                    <styleClass>
+                        <String fx:value="menu-button" />
+                        <String fx:value="menu-item" />
+                    </styleClass>
+                </MenuButton>
+            </HBox>
+
+
+
+            <Label style="-fx-text-fill: #FFFFFF; -fx-font-size: 16px; -fx-font-weight: bold;" text="Investissements" />
+
+            <HBox spacing="10.0">
+                <Button fx:id="portfolioButton" onAction="#handlePortfolio" styleClass="button" stylesheets="@styles.css" text="Transaction">
+                <font>
+                   <Font name="System Bold" size="12.0" />
+                </font></Button>
+                <Button fx:id="historyButton" onAction="#handleHistory" styleClass="button" stylesheets="@styles.css" text="Historique">
+                    <font>
+                        <Font name="System Bold" size="12.0" />
+                    </font>
+                </Button>
+            </HBox>
+
+
+
+
+
+            <Label style="-fx-text-fill: #FFFFFF; -fx-font-size: 16px; -fx-font-weight: bold;" text="Cryptos et Actions" />
+
+
+            <HBox spacing="10.0">
+                <Button fx:id="btcButton" onAction="#handleBTC" styleClass="button" stylesheets="@styles.css" text="BTC">
+                    <font>
+                        <Font name="System Bold" size="12.0" />
+                    </font>
+                </Button>
+                <Button fx:id="ethButton" onAction="#handleETH" styleClass="button" stylesheets="@styles.css" text="ETH">
+                    <font>
+                        <Font name="System Bold" size="12.0" />
+                    </font>
+                </Button>
+                <Button fx:id="researchbutton" onAction="#handleResearch" styleClass="button" stylesheets="@styles.css" text="Recherche">
+                    <font>
+                        <Font name="System Bold" size="12.0" />
+                    </font>
+                </Button>
+            </HBox>
+            <Label fx:id="selectedPortfolioLabel" style="-fx-text-fill: #FFFFFF; -fx-font-size: 12px; -fx-font-weight: bold;" text="Portefeuille sélectionné : Aucun" />
+            <Label fx:id="balanceLabel" style="-fx-text-fill: #FFFFFF; -fx-font-size: 12px; -fx-font-weight: bold;" text="Solde actuel: 1000.0 USD" />
+
+            <StackPane fx:id="chartContainer" prefHeight="200.0" prefWidth="300.0">
+            <!-- Le camembert sera affiché ici -->
+        </StackPane>
+
+        </VBox>
+    </left>
+    <center>
+        <StackPane>
+            <TableView fx:id="historyTable" prefHeight="200.0" prefWidth="300.0" styleClass="common-table" stylesheets="@styles.css" visible="false">
+            </TableView>
+            <TableView fx:id="portfolioTableView" prefHeight="200.0" prefWidth="300.0" styleClass="common-table" stylesheets="@styles.css" visible="false">
+                <!-- Columns are added dynamically in the DashboardController -->
+            </TableView>
+            <StackPane fx:id="contentArea" prefHeight="378.0" prefWidth="705.0" styleClass="background" stylesheets="@styles.css">
+
+                <children>
+                    <ImageView fitHeight="370.0" fitWidth="374.0" pickOnBounds="true" preserveRatio="true">
+                        <image>
+                            <Image url="@../../accueil_2.png" />
+                        </image>
+                        <StackPane.margin>
+                            <Insets bottom="40.0" left="40.0" right="40.0" top="40.0" />
+                        </StackPane.margin></ImageView>
+                </children></StackPane>
+        </StackPane>
+    </center>
+
+</BorderPane>
