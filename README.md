@@ -1,2 +1,14 @@
 # Wallet_Manager_Simulation
-Create, duplicate, and delete wallets with ease in this Java-based Wallet Manager simulation. Users can manage their finances by adding cryptocurrency or stock actions using APIs.
+
+Welcome to the Wallet Manager Simulation, a Java-based application that allows users to create, duplicate, and delete wallets. This simulation also provides the functionality to manage finances by adding cryptocurrency or stock actions through APIs.
+
+## Authors
+
+- Elisa Teboul
+- Mouloud Merbouche
+- Julien Chémery
+
+## Features
+
+- Create, duplicate, and delete wallets.
+- Manage finances by adding cryptocurrency or stock actions using APIs.
